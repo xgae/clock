@@ -20,3 +20,17 @@ function getSecondsToday() {
     let diff = now - today;
     return Math.round(diff / 1000);
 }
+function updateClock() {
+  var now = new Date();
+  var hours = now.getHours();
+  var minutes = now.getMinutes();
+  var seconds = now.getSeconds();
+
+  var time = hours + ":" + minutes + ":" + seconds;
+
+  document.getElementById("clock").textContent = time;
+
+  setTimeout(updateClock, 1000); // Update the clock every second
+}
+
+updateClock();
